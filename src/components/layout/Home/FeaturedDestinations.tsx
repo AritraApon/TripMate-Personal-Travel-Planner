@@ -7,7 +7,7 @@ import { destinationsData } from '../../../../public/data/destinations';
 import DestinationCard from '@/components/layout/Home/DestinationCard';
 
 export default function FeaturedDestinations() {
-  // হোমপেজে দেখানোর জন্য প্রথম ৪টি ডাটা ফিল্টার
+ 
   const featured = destinationsData.slice(0, 4);
 
   return (
