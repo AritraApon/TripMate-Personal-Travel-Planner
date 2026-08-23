@@ -54,7 +54,7 @@ export default function DestinationCard({ destination }: { destination: Destinat
           </div>
 
           <Link
-            href={`/destinations/${destination.id}`}
+            href={`/explore/${destination.id}`}
             className="flex items-center gap-1 px-4 py-2 rounded-xl bg-slate-800 hover:bg-teal-500 hover:text-slate-950 text-slate-200 text-xs font-semibold transition-all group/btn"
           >
             <span>View Details</span>
