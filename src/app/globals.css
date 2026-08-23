@@ -1,2 +1,12 @@
 @import "tailwindcss";
 
+@layer utilities {
+  /* Stylish Header Font */
+  .font-heading {
+    font-family: var(--font-syne), sans-serif;
+  }
+}
+
+body {
+  font-family: var(--font-jakarta), sans-serif;
+}

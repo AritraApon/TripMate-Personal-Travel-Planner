@@ -13,11 +13,10 @@ const MyItineraryPage = () => {
 
   const { itinerary, updateActivityCost, removeFromItinerary } = context;
 
-  // মোট খরচ হিসেব
+
   const totalAmount = itinerary.reduce((sum, item) => sum + (Number(item.cost) || 0), 0);
 
-  // Price আপডেট হ্যান্ডলার
-  const handleCostChange = (id: string, newCost: string) => {
+    const handleCostChange = (id: string, newCost: string) => {
     const numericCost = parseFloat(newCost) || 0;
     if (updateActivityCost) {
       updateActivityCost(id, numericCost);
@@ -25,7 +24,8 @@ const MyItineraryPage = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6 b">
+    <div className="bg-[#000000] min-h-screen">
+        <div className="  max-w-4xl mx-auto p-6 space-y-6 ">
       <div className="flex items-center justify-between border-b border-slate-800 pb-4">
         <h1 className="text-2xl font-bold text-slate-100">My Itinerary</h1>
         <span className="text-sm text-slate-400">
@@ -81,7 +81,7 @@ const MyItineraryPage = () => {
           </div>
         </div>
       )}
-    </div>
+    </div></div>
   );
 };
 
