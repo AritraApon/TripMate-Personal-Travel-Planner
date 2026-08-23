@@ -2,7 +2,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { destinationsData } from '../../../../public/data/destinations';
-import { Star, MapPin, DollarSign, ArrowLeft, Calendar, Sun, CheckCircle2, Plus } from 'lucide-react';
+import { Star, MapPin, DollarSign, ArrowLeft, Calendar, Sun, } from 'lucide-react';
+
+import AddButton from '@/components/Exlore/AddButton';
+
 
 interface DetailsPageProps {
   params: Promise<{ id: string }>;
@@ -12,12 +15,16 @@ const DetailsPage = async (props: DetailsPageProps) => {
   const params = await props.params;
   const id = params?.id;
 
-  // ১. ID অনুযায়ী ডেস্টিনেশন ফিল্টার করা
+
   const destination = destinationsData.find((item) => item.id === id);
 
   if (!destination) {
     notFound();
   }
+
+  //context Api handel
+
+
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 py-10 px-4 sm:px-6 lg:px-8">
@@ -92,37 +99,9 @@ const DetailsPage = async (props: DetailsPageProps) => {
                 </span>
               </div>
 
-              <div className="space-y-4">
-                {destination.suggestedActivities?.map((act) => (
-                  <div
-                    key={act.id}
-                    className="flex items-center justify-between p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 hover:border-slate-700 transition group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-slate-900 text-teal-400">
-                        <CheckCircle2 className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-slate-200 text-sm sm:text-base group-hover:text-teal-400 transition">
-                          {act.title}
-                        </h4>
-                        <span className="text-xs text-slate-400">Estimated activity fee</span>
-                      </div>
-                    </div>
+            <AddButton destination={destination}/>
 
-                    <div className="flex items-center gap-4">
-                      <span className="text-slate-100 font-bold text-sm sm:text-base">
-                        ${act.cost}
-                      </span>
-                      {/* Itinerary Add Button Placeholder */}
-                      <button className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-teal-500 hover:bg-teal-400 text-slate-950 text-xs font-bold transition">
-                        <Plus className="w-3.5 h-3.5" />
-                        <span>Add</span>
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+
             </div>
 
           </div>

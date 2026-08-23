@@ -1,14 +1,14 @@
-import CategoryBadges from "@/components/layout/Home/CategoryBadges";
-import FeaturedDestinations from "@/components/layout/Home/FeaturedDestinations";
-import Hero from "@/components/layout/Home/Hero";
+import CategoryBadges from "@/components/Home/CategoryBadges";
+import FeaturedDestinations from "@/components/Home/FeaturedDestinations";
+import Hero from "@/components/Home/Hero";
 
 
 export default function Home() {
   return (
     <div>
-     <Hero/>
-     <CategoryBadges/>
-     <FeaturedDestinations/>
+      <Hero />
+      <CategoryBadges />
+      <FeaturedDestinations />
     </div>
   );
 }

@@ -3,11 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { destinationsData } from '../../../../public/data/destinations';
-import DestinationCard from '@/components/layout/Home/DestinationCard';
+import { destinationsData } from '../../../public/data/destinations';
+import DestinationCard from '@/components/Home/DestinationCard';
 
 export default function FeaturedDestinations() {
- 
+
   const featured = destinationsData.slice(0, 4);
 
   return (
