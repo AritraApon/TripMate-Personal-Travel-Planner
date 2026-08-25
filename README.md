@@ -1,37 +1,40 @@
+
+
+![Mockup](https://i.ibb.co.com/CKqdgzCR/image.png)
+
 # 🌍 TripMate — Personal Travel Planner
 
 A modern, responsive web application built for travelers to explore top destinations and organize personalized trip itineraries seamlessly. Built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**.
-
-🚀 **Live Demo:** [https://trip-mate-personal-travel-planner.vercel.app/](https://trip-mate-personal-travel-planner.vercel.app/)
-📂 **GitHub Repository:** [https://github.com/AritraApon/TripMate-Personal-Travel-Planner](https://github.com/AritraApon/TripMate-Personal-Travel-Planner)
-
 ---
-
-## 📸 Project Screenshots
-
-| Home Page | Explore Destinations | My Itinerary |
-| :---: | :---: | :---: |
-| ![Home Page](https://i.ibb.co.com/FdDtzPS/image.png) | ![Explore Page](https://i.ibb.co.com/2YL11g8K/image.png) | ![Itinerary Page](https://i.ibb.co.com/6cnXG3wX/image.png) |
-
-*(Note: Replace `./public/screenshots/filename.png` with your actual screenshot image paths inside the public folder)*
-
+### 🚀 **Live Demo:** [https://trip-mate-personal-travel-planner.vercel.app](https://trip-mate-personal-travel-planner.vercel.app)
 ---
+## 🎥 Project Demo
+
+[![Watch Project Demo](https://drive.google.com/thumbnail?id=1hIAf5xCxWjoUdav6x93Xt2oYWQJo2uP0)](https://drive.google.com/file/d/1hbAvgRqwWaUuN_u4JevFdX6hJd2TjRdG/view?usp=sharing)
+
+**▶️ Click the preview above to watch the full project demo.**
 
 ## 🎯 Project Objective
 
 TripMate was designed to provide an intuitive client-side travel planning experience without relying on an external backend database. It demonstrates clean modular component architecture, robust React Context API state management, persistent client storage using `localStorage`, smooth UI transitions, and fully responsive layouts across mobile, tablet, and desktop screens.
 
 ---
-
 ## ✨ Key Features
 
-- **🗺️ Destination Explorer:** Explore curated sample destinations rendered via reusable card components with ratings, pricing, and descriptions.
-- **🔍 Real-Time Search & Category Filter:** Effortlessly search destinations by title/location or filter by categories like *Beach*, *Nature*, *City*, and *Adventure*.
-- **📍 Destination Details & Activities:** View full destination breakdowns including suggested activities along with their individual costs.
-- **📅 Dynamic Itinerary Management:** Assign specific activities to **Day 1**, **Day 2**, or **Day 3** of your trip schedule seamlessly.
-- **💰 Budget Calculation & Real-time Edits:** Automatically calculates total estimated trip costs. Users can update activity costs or remove items dynamically with instant UI updates.
-- **💾 LocalStorage Persistence:** Itinerary state is persisted locally, ensuring data remains intact upon page refreshes.
-- **🎨 Glassmorphic & Modern UI:** Crafted with dark theme design patterns, dynamic inline selectors, smooth animations, and toast notifications.
+* **🗺️ Destination Explorer:** Explore curated sample destinations using reusable card components with ratings, pricing, and descriptions.
+
+* **🔍 Real-Time Search & Category Filter:** Easily search destinations by title or location, and filter them by categories such as *Beach*, *Nature*, *City*, and *Adventure*.
+
+* **📍 Destination Details & Activities:** View detailed information about each destination, including suggested activities and their individual costs.
+
+* **📅 Dynamic Itinerary Management:** Assign specific activities to **Day 1**, **Day 2**, or **Day 3** of your trip itinerary with ease.
+
+* **💰 Budget Calculation & Real-Time Edits:** Automatically calculate the estimated total trip cost. Update activity costs or remove items dynamically with instant UI updates.
+
+* **💾 LocalStorage Persistence:** Persist itinerary data locally using **LocalStorage**, ensuring your selected activities remain available even after refreshing the page.
+
+* **🎨 Glassmorphic & Modern UI:** Designed with a modern dark theme, glassmorphic elements, dynamic selectors, smooth animations, and toast notifications for a polished user experience.
+
 
 ---
 
@@ -45,6 +48,8 @@ TripMate was designed to provide an intuitive client-side travel planning experi
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Notifications:** [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
+
+
 
 ```json
 "dependencies": {
@@ -77,9 +82,36 @@ export interface Destination {
   rating: number;
   estimatedDailyCost: number;
   description: string;
-  suggestedActivities: Activity[];
+  suggestedActivities:
+  Activity[];
 }
+
+export const destinationsData: Destination[] = [
+  {
+    id: '1',
+    title: "Cox's Bazar Sea Beach",
+    location: "Cox's Bazar, Bangladesh",
+    category: 'Beach',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop',
+    rating: 4.8,
+    estimatedDailyCost: 45,
+    description: "Explore the world's longest unbroken natural sandy sea beach. Ideal for relaxation, sunset views, and fresh seafood.",
+    suggestedActivities: [
+      { id: 'act-101', title: 'Parasailing at Himchari', cost: 25 },
+      { id: 'act-102', title: 'Beachside Seafood Dinner', cost: 15 },
+      { id: 'act-103', title: 'Speedboat Ride at Laboni Point', cost: 10 },
+    ],
+  },
+  ]
 ```
+
+## 📸 Project Screenshots
+
+| Home Page | Explore Destinations | My Itinerary |
+| :---: | :---: | :---: |
+| ![Home Page](https://i.ibb.co.com/FdDtzPS/image.png) | ![Explore Page](https://i.ibb.co.com/2YL11g8K/image.png) | ![Itinerary Page](https://i.ibb.co.com/6cnXG3wX/image.png) |
+
+---
 ---
 ## ⚡ Getting Started Locally
 * Follow these steps to run the project locally on your machine:
@@ -105,9 +137,20 @@ npm run dev
 
 - Navigate to http://localhost:3000 to view the application.
 
-# 👨‍💻 Developer Information
-##  Aritro Mazumder
+---
+---
+
+# 👨‍💻 Aritro Mazumder
 
 ### Frontend Web Developer
 
-Focused on React, Next.js, TypeScript, and modern UI/UX design.
+I’m a **Frontend Web Developer** focused on building modern, responsive, and user-friendly web experiences.
+
+### 🌐 Connect With Me
+
+* **Portfolio:** [View Portfolio](https://aritro-mazumdar-protfolio-one.vercel.app)
+* **LinkedIn:** [Connect on LinkedIn](https://www.linkedin.com/in/aritro-mazumdar-011206apon)
+
+> 💡 Focused on creating clean, scalable, and modern web applications with React, Next.js, and TypeScript.
+
+
