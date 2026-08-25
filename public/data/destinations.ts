@@ -1,4 +1,4 @@
-// types/trip.ts (নিশ্চিত করো এই Interface-টি তোমার প্রজেক্টে আছে)
+
 export interface Activity {
   id: string;
   title: string;
@@ -9,7 +9,7 @@ export interface Destination {
   id: string;
   title: string;
   location: string;
-  category: 'Beach' | 'Nature' | 'City' | 'Adventure';
+  category: 'Beach' | 'Nature' | 'City' | 'Adventure' | 'Historical';
   image: string;
   rating: number;
   estimatedDailyCost: number;

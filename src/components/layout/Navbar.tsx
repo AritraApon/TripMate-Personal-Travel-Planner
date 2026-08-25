@@ -58,7 +58,7 @@ export default function Navbar() {
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 text-slate-200 text-sm">
                   <User className="w-4 h-4 text-teal-400" />
-                  <span className="font-medium">Aritro</span>
+                  <span className="font-medium">Tipmate</span>
                 </div>
                 <button
                   onClick={() => setIsLoggedIn(false)}

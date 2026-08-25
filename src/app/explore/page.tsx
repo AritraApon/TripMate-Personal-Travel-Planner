@@ -2,41 +2,22 @@
 
 import { useState, useMemo } from 'react';
 import DestinationCard from '@/components/Home/DestinationCard';
-import { destinationsData } from '../../../public/data/destinations';
+import { destinationsData, Destination } from '../../../public/data/destinations';
 import { Search, Filter, X } from 'lucide-react';
-
-type Activity = {
-  id: string;
-  title: string;
-  cost: number;
-};
-
-interface DestinationType {
-  id: string;
-  title: string;
-  location: string;
-  category: string;
-  image: string;
-  rating: number;
-  estimatedDailyCost: number;
-  description: string;
-  suggestedActivities: Activity[];
-}
 
 const ExplorePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-
 
   const categories = useMemo(() => {
     const cats = destinationsData.map((dest) => dest.category);
     return ['All', ...Array.from(new Set(cats))];
   }, []);
 
-
   const filteredDestinations = useMemo(() => {
-    return destinationsData.filter((dest: DestinationType) => {
-      const matchesSearch = dest.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    return destinationsData.filter((dest: Destination) => {
+      const matchesSearch =
+        dest.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         dest.location.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || dest.category === selectedCategory;
 
@@ -88,10 +69,11 @@ const ExplorePage = () => {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition border ${selectedCategory === cat
-                  ? 'bg-teal-500 text-slate-950 border-teal-400 shadow-lg shadow-teal-500/20'
-                  : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700 hover:text-white'
-                  }`}
+                className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition border ${
+                  selectedCategory === cat
+                    ? 'bg-teal-500 text-slate-950 border-teal-400 shadow-lg shadow-teal-500/20'
+                    : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700 hover:text-white'
+                }`}
               >
                 {cat}
               </button>
@@ -115,7 +97,7 @@ const ExplorePage = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {filteredDestinations.map((destination: DestinationType) => (
+            {filteredDestinations.map((destination: Destination) => (
               <DestinationCard key={destination.id} destination={destination} />
             ))}
           </div>

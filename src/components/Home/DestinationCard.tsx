@@ -1,9 +1,29 @@
 'use client';
 
-import React from 'react';
+
 import Link from 'next/link';
 import { Star, MapPin, DollarSign, ArrowRight } from 'lucide-react';
-import { Destination } from '@/types/trip';
+
+
+export type DestinationCategory = 'Beach' | 'Nature' | 'City' | 'Adventure' | 'Historical';
+
+export interface Activity {
+  id: string;
+  title: string;
+  cost: number;
+}
+
+export interface Destination {
+  id: string;
+  title: string;
+  location: string;
+  category: DestinationCategory;
+  image: string;
+  rating: number;
+  estimatedDailyCost: number;
+  description: string;
+  suggestedActivities: Activity[];
+}
 
 export default function DestinationCard({ destination }: { destination: Destination }) {
   return (
