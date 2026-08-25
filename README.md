@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 TripMate — Personal Travel Planner
 
-## Getting Started
+A modern, responsive web application built for travelers to explore top destinations and organize personalized trip itineraries seamlessly. Built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS**.
 
-First, run the development server:
+🚀 **Live Demo:** [https://trip-mate-personal-travel-planner.vercel.app/](https://trip-mate-personal-travel-planner.vercel.app/)
+📂 **GitHub Repository:** [https://github.com/AritraApon/TripMate-Personal-Travel-Planner](https://github.com/AritraApon/TripMate-Personal-Travel-Planner)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📸 Project Screenshots
+
+| Home Page | Explore Destinations | My Itinerary |
+| :---: | :---: | :---: |
+| ![Home Page](https://i.ibb.co.com/FdDtzPS/image.png) | ![Explore Page](https://i.ibb.co.com/2YL11g8K/image.png) | ![Itinerary Page](https://i.ibb.co.com/6cnXG3wX/image.png) |
+
+*(Note: Replace `./public/screenshots/filename.png` with your actual screenshot image paths inside the public folder)*
+
+---
+
+## 🎯 Project Objective
+
+TripMate was designed to provide an intuitive client-side travel planning experience without relying on an external backend database. It demonstrates clean modular component architecture, robust React Context API state management, persistent client storage using `localStorage`, smooth UI transitions, and fully responsive layouts across mobile, tablet, and desktop screens.
+
+---
+
+## ✨ Key Features
+
+- **🗺️ Destination Explorer:** Explore curated sample destinations rendered via reusable card components with ratings, pricing, and descriptions.
+- **🔍 Real-Time Search & Category Filter:** Effortlessly search destinations by title/location or filter by categories like *Beach*, *Nature*, *City*, and *Adventure*.
+- **📍 Destination Details & Activities:** View full destination breakdowns including suggested activities along with their individual costs.
+- **📅 Dynamic Itinerary Management:** Assign specific activities to **Day 1**, **Day 2**, or **Day 3** of your trip schedule seamlessly.
+- **💰 Budget Calculation & Real-time Edits:** Automatically calculates total estimated trip costs. Users can update activity costs or remove items dynamically with instant UI updates.
+- **💾 LocalStorage Persistence:** Itinerary state is persisted locally, ensuring data remains intact upon page refreshes.
+- **🎨 Glassmorphic & Modern UI:** Crafted with dark theme design patterns, dynamic inline selectors, smooth animations, and toast notifications.
+
+---
+
+## 🛠️ Tech Stack & Dependencies
+
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Library:** [React 19](https://react.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **State Management:** React Context API & Native `localStorage`
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Notifications:** [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
+
+```json
+"dependencies": {
+  "framer-motion": "^13.1.0",
+  "lucide-react": "^1.33.0",
+  "next": "16.3.1",
+  "react": "19.2.8",
+  "react-dom": "19.2.8",
+  "react-toastify": "^11.1.0"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📊 Data Architecture
+- Destinations and activities are structured using strongly typed TypeScript objects (destinations.ts):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+export interface Activity {
+  id: string;
+  title: string;
+  cost: number;
+  day?: string;
+}
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+export interface Destination {
+  id: string;
+  title: string;
+  location: string;
+  category: 'Beach' | 'Nature' | 'City' | 'Adventure';
+  image: string;
+  rating: number;
+  estimatedDailyCost: number;
+  description: string;
+  suggestedActivities: Activity[];
+}
+```
+---
+## ⚡ Getting Started Locally
+* Follow these steps to run the project locally on your machine:
 
-## Learn More
+### 1 Clone the repository:
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+git clone [https://github.com/AritraApon/TripMate-Personal-Travel-Planner.git](https://github.com/AritraApon/TripMate-Personal-Travel-Planner.git)
+cd TripMate-Personal-Travel-Planner
+```
+### 2. Install dependencies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```Bash
+npm install
+```
+### 3. Run the development server:
+```
+Bash
+npm run dev
+```
+### 4. Open in Browser:
 
-## Deploy on Vercel
+- Navigate to http://localhost:3000 to view the application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# 👨‍💻 Developer Information
+##  Aritro Mazumder
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Frontend Web Developer
+
+Focused on React, Next.js, TypeScript, and modern UI/UX design.
