@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from '@/components/layout/Navbar';
 import Provider from "@/context/provider";
 import Footer from "@/components/layout/Footer";
+import { ToastContainer } from "react-toastify";
 
 // ১. Body-র জন্য মডার্ন ফন্ট
 const jakarta = Plus_Jakarta_Sans({
@@ -42,6 +43,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+            <ToastContainer/>
         </Provider>
       </body>
     </html>
