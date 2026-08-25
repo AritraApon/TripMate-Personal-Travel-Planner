@@ -21,7 +21,7 @@ const containerVariants = {
       staggerChildren: 0.12,
     },
   },
-};
+} as const;
 
 // Item Card Entrance Animation
 const cardVariants = {
@@ -34,7 +34,7 @@ const cardVariants = {
       ease: 'easeOut',
     },
   },
-};
+} as const;
 
 export default function CategorySection() {
   return (

@@ -16,7 +16,7 @@ const containerVariants = {
       staggerChildren: 0.15,
     },
   },
-};
+} as const;
 
 // Item animations for fading up
 const itemVariants = {
@@ -26,10 +26,10 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: 'easeOut',
+     ease: [0.25, 0.1, 0.25, 1.0],
     },
   },
-};
+} as const;
 
 export default function FeaturedDestinations() {
   const featured = destinationsData.slice(0, 4);

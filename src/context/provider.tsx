@@ -7,6 +7,7 @@ export interface Activity {
   id: string;
   title: string;
   cost: number;
+  day?: string;
 }
 
 interface ItineraryContextType {
